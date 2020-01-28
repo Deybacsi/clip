@@ -1,3 +1,8 @@
-emulators
-intros
-roms
+demos/*
+!demos/readme.md
+intros/*
+!intros/readme.md
+roms/*
+!roms/c64/readme.md
+temp/*
+!temp/readme.md

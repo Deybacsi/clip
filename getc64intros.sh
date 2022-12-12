@@ -15,8 +15,8 @@ rm $MYTMP/g2temp.txt
 > $MYTMP/list.txt
 > intros/C64/list.txt
 
-for LETTER in 0 ; do
-#for LETTER in 0 {A..Z}; do
+#for LETTER in 0 ; do
+for LETTER in 0 {A..Z}; do
     echo $LETTER
 
     #GROUPS=$(curl -k https://index.hu)

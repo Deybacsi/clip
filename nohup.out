@@ -1,0 +1,11 @@
+killall: x64sc: no process killed
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 6: [: -ne: unary operator expected
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 12: leep: command not found
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 13: syntax error near unexpected token `done'
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 13: `done'
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 12: syntax error near unexpected token `done'
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 12: `done'
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 11: 45665 Terminated              sleep 1
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 10: 45666 Terminated              sleep 1
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 12: syntax error near unexpected token `done'
+/home/mobaxterm/MyDocuments/GitHub/clip/emukiller.sh: line 12: `done'

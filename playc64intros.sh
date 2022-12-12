@@ -24,7 +24,9 @@ while [ 1 ]; do
         echo -en "\n\n\n\nSearching for $GROUP - $INTRO ..."
         echo "SEARCHING FOR $INTRO" > $INFOFILE
         echo "LOADING" >> $INFOFILE
-        INTROFILE=$(find intros/ -name "$INTRO.prg")
+        #INTROFILE=$(find intros/ -name "$INTRO.prg")
+        INTROFILE="intros/C64/intros_c64_org_11234_full/${INTRO:0:1}/$INTRO.prg"
+        echo $INTROFILE
         if [[ -f "$INTROFILE" ]]; then
             echo -en "found $INTROFILE\n"
             echo "Loading"

@@ -6,3 +6,5 @@ roms/*
 !roms/c64/readme.md
 temp/*
 !temp/readme.md
+nohup.out
+log-playc64intros.txt

@@ -1,6 +1,6 @@
 demos/*
 !demos/readme.md
-intros/*
+#intros/*
 !intros/readme.md
 roms/*
 !roms/c64/readme.md

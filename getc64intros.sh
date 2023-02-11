@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # populates a list.txt file in intros/C64 that contains a group name and a filename
-# list.txt will be used to start the prg-s with vice
+# it only gets the first 10 filenames for each group !!!!
+# running of
+#     fixlist.sh 
+# is needed after this script to make the final intro list
 
 # download the full intro pack zip from intros.c64.org, extract it to intros/C64 folder
 

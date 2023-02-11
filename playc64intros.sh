@@ -34,8 +34,8 @@ while [ 1 ]; do
         if [[ -f "$INTROFILE" ]]; then
             echo -en "found $INTROFILE\n"
             echo "Loading"
-            echo "$GROUP: $INTRO" > $INFOFILE
-            echo "$GROUP: $INTRO" >> $LATESTFILE
+            echo "$INTRO / $GROUP" > $INFOFILE
+            echo "$INTRO / $GROUP" >> $LATESTFILE
             echo "$(tail -5 $LATESTFILE)" > $LATESTFILE 
             #echo "intros.c64.org/intro/$INTRO" >> $INFOFILE
             nohup $MYPATH/emukiller.sh &

@@ -23,9 +23,6 @@ echo $MYPATH
 
 
 IFS=";"
-https://viewerboss.com/dashboard/packages?type=Twitch%20All%20In%20One No problem, you can use the code 'HappyNewYear' with your purchase for 20% off
-https://stream-chaos.com/
-
 
 while [ 1 ]; do
     shuf -n 1 intros/C64/list.txt | while read GROUP INTRO YEAR; do

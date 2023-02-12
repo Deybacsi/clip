@@ -1,5 +1,5 @@
-trans_x-02 / Trans-X
-tsw-06 / The Shadows [TSW]
-m8-02 / Motiv 8 [M8]
-fresh-03 / Fresh (CH)
-sok-04 / Slaves of Keyboard [SOK]
+delta_system-02 / Delta System
+usa_team-04 / USA Team
+thundercats-04 / Thundercats [TC]
+lda-03 / Licence Destroyers Army [LDA]
+udi-04 / Underground Domain Incorporated [UDI]

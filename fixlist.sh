@@ -14,7 +14,7 @@ INTRONAME=""
 IFS=";"
 
 rm groupname.tmp
-
+ 
 ls -1 $PRGPATH | while read PRG
 do
     INTRO=$(echo $PRG | sed 's/.prg//g')

@@ -7,7 +7,7 @@
 # is needed after this script to make the final intro list
 
 # download the full intro pack zip from intros.c64.org, extract it to intros/C64 folder
-
+ 
 
 IFS=''
 

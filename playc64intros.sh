@@ -21,7 +21,7 @@ YEARFILE="intros/C64/yearestimator.txt"
 MYPATH=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo $MYPATH
 
-
+ 
 IFS=";"
 
 while [ 1 ]; do

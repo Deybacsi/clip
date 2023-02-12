@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CNT=10
+CNT=120
 CNTFILE="intros/C64/counter.txt"
 
 while [ $CNT -ne 0 ];do
@@ -10,4 +10,5 @@ while [ $CNT -ne 0 ];do
     sleep 1
 done
 > $CNTFILE
+./nircmd.exe win activate ititle "OBS" && sleep 1
 killall x64sc

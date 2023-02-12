@@ -16,15 +16,19 @@ echo $EMUEXE
 LOGFILE="log-playc64intros.txt"
 INFOFILE="intros/C64/nowplaying.txt"
 LATESTFILE="intros/C64/latest.txt"
+YEARFILE="intros/C64/yearestimator.txt"
+
 MYPATH=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo $MYPATH
 
 
 IFS=";"
+https://viewerboss.com/dashboard/packages?type=Twitch%20All%20In%20One No problem, you can use the code 'HappyNewYear' with your purchase for 20% off
+https://stream-chaos.com/
 
 
 while [ 1 ]; do
-    shuf -n 1 intros/C64/list.txt | while read GROUP INTRO; do
+    shuf -n 1 intros/C64/list.txt | while read GROUP INTRO YEAR; do
         echo -en "\n\n\n\nSearching for $GROUP - $INTRO ..."
         #echo "SEARCHING FOR $INTRO" > $INFOFILE
         #echo "LOADING" >> $INFOFILE
@@ -37,10 +41,11 @@ while [ 1 ]; do
             echo "$INTRO / $GROUP" > $INFOFILE
             echo "$INTRO / $GROUP" >> $LATESTFILE
             echo "$(tail -5 $LATESTFILE)" > $LATESTFILE 
+            echo -en "$YEAR" > $YEARFILE
             #echo "intros.c64.org/intro/$INTRO" >> $INFOFILE
             nohup $MYPATH/emukiller.sh &
             $EMUEXE $INTROFILE
-            sleep 3
+            #sleep 3
         else
             echo -en "$INTRO.prg not found!\n"
             echo "$INTRO.prg not found" >> $LOGFILE        

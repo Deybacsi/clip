@@ -1,5 +1,5 @@
-bassline-08 / Bassline
-ws-03 / Weird Science 2662 [WS]
-nuclear-05 / Nuclear
-funfactory-06 / Fun Factory
-legabc-02 / The Legendary ABC
+trans_x-02 / Trans-X
+tsw-06 / The Shadows [TSW]
+m8-02 / Motiv 8 [M8]
+fresh-03 / Fresh (CH)
+sok-04 / Slaves of Keyboard [SOK]

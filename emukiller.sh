@@ -12,5 +12,5 @@ while [ $CNT -ne 0 ];do
 done
 > $CNTFILE
 > INFOFILE
-./nircmd.exe win activate ititle "OBS" && sleep 1
+#./nircmd.exe win activate ititle "OBS" && sleep 1
 killall x64sc

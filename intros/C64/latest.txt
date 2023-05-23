@@ -1,5 +1,5 @@
-delta_system-02 / Delta System
-usa_team-04 / USA Team
-thundercats-04 / Thundercats [TC]
-lda-03 / Licence Destroyers Army [LDA]
-udi-04 / Underground Domain Incorporated [UDI]
+softguru-01 / Softguru
+br-02 / Fucked Beyond Repair [FBR]
+amazon-01 / Amazon
+hf-53 / Hokuto Force [HF]
+dynamix-23 / Dynamix

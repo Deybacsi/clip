@@ -13,6 +13,8 @@ echo $EMUEXE > emuexe.sh
 
 echo $EMUEXE
 
+CNT=120
+CNTFILE="intros/C64/counter.txt"
 LOGFILE="log-playc64intros.txt"
 INFOFILE="intros/C64/nowplaying.txt"
 LATESTFILE="intros/C64/latest.txt"
@@ -25,7 +27,8 @@ echo $MYPATH
 IFS=";"
 
 while [ 1 ]; do
-    shuf -n 1 intros/C64/list.txt | while read GROUP INTRO YEAR; do
+    shuf -n 1 intros/C64/list-final.txt | while read GROUP INTRO YEAR; do
+
         echo -en "\n\n\n\nSearching for $GROUP - $INTRO ..."
         #echo "SEARCHING FOR $INTRO" > $INFOFILE
         #echo "LOADING" >> $INFOFILE
@@ -40,9 +43,26 @@ while [ 1 ]; do
             echo "$(tail -5 $LATESTFILE)" > $LATESTFILE 
             echo -en "$YEAR" > $YEARFILE
             #echo "intros.c64.org/intro/$INTRO" >> $INFOFILE
-            nohup $MYPATH/emukiller.sh &
-            $EMUEXE $INTROFILE
-            #sleep 3
+            #kill -9 $(cat emukiller_pid.txt)                                               # kill stucked emukillers to avoid <2min kills
+            #nohup $MYPATH/emukiller.sh &
+            #echo $! > emukiller_pid.txt
+            $EMUEXE -remotemonitor c64intros.prg &
+            sleep 4
+            echo "autostart \"$INTROFILE\"" | nc localhost 6510
+
+            while [ $CNT -ne 0 ];do
+                echo -en "Next in\n"$CNT > $CNTFILE
+                ((CNT-=1))
+                echo $CNT
+                sleep 1
+            done
+            > $CNTFILE
+            > INFOFILE
+
+            echo "quit" | nc localhost 6510
+ 
+            echo "------------------------------------------------------------------------------------------------------"
+            sleep 2
         else
             echo -en "$INTRO.prg not found!\n"
             echo "$INTRO.prg not found" >> $LOGFILE        

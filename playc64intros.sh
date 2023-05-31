@@ -50,7 +50,7 @@ while [ 1 ]; do
             $EMUEXE -remotemonitor c64intros.prg &
             OBSCommand/OBSCommand.exe /startrecording
 
-            STARTTIME=$(date '+%Y-%m-%d_%H-%M')
+            STARTTIME=$(date '+%Y-%m-%d?%H-%M')
             echo "!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------------ $STARTTIME"
 
 

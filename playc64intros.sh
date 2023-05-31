@@ -36,6 +36,7 @@ while [ 1 ]; do
         INTROFILE="intros/C64/intros_c64_org_11234_full/$INTRO.prg"
         echo $INTROFILE
         if [[ -f "$INTROFILE" ]]; then
+            OBSCommand/OBSCommand.exe /stoprecording
             echo -en "found $INTROFILE\n"
             echo "Loading"
             echo "$INTRO / $GROUP" > $INFOFILE
@@ -47,6 +48,12 @@ while [ 1 ]; do
             #nohup $MYPATH/emukiller.sh &
             #echo $! > emukiller_pid.txt
             $EMUEXE -remotemonitor c64intros.prg &
+            OBSCommand/OBSCommand.exe /startrecording
+
+            STARTTIME=$(date '+%Y-%m-%d_%H-%M')
+            echo "!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------------ $STARTTIME"
+
+
             sleep 4
             echo "autostart \"$INTROFILE\"" | nc localhost 6510
 
@@ -57,10 +64,22 @@ while [ 1 ]; do
                 sleep 1
             done
             > $CNTFILE
-            > INFOFILE
+            > $INFOFILE
+
+            OBSCommand/OBSCommand.exe /stoprecording
 
             echo "quit" | nc localhost 6510
  
+            echo "------------------------------------------------------------------------------------------------------"
+            VIDEONAME=$(ls -1t ../../Videók/$STARTTIME*.mkv | head -n1)
+            echo "!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------------ $VIDEONAME"
+
+            echo "Videoname: $VIDEONAME"
+            echo "Introname: $INTRO"
+            
+            mv "$VIDEONAME" "../../Videók/completevideos/$INTRO.mkv"
+            echo "mv" "../../Videók/$STARTTIME*.mkv" "../../Videók/completevideos/$INTRO.mkv"
+
             echo "------------------------------------------------------------------------------------------------------"
             sleep 2
         else

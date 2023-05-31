@@ -21,5 +21,7 @@ not tested
 Docs:
 https://obsproject.com/forum/resources/command-line-tool-for-obs-websocket-plugin-windows.615/
 
+.Net 3.1 download needed at first run. Command line error will be thrown with the DL link.
+
 
 

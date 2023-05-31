@@ -1,0 +1,1 @@
+OBSCommand/OBSCommand.exe /stoprecording

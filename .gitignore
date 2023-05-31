@@ -8,3 +8,7 @@ temp/*
 !temp/readme.md
 nohup.out
 log-playc64intros.txt
+
+intros/C64/counter.txt
+intros/C64/latest.txt
+intros/C64/nowplaying.txt

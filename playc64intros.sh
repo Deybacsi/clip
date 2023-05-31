@@ -48,7 +48,7 @@ while [ 1 ]; do
             #nohup $MYPATH/emukiller.sh &
             #echo $! > emukiller_pid.txt
             $EMUEXE -remotemonitor c64intros.prg &
-            OBSCommand/OBSCommand.exe /startrecording
+            #OBSCommand/OBSCommand.exe /startrecording
 
             STARTTIME=$(date '+%Y-%m-%d?%H-%M')
             echo "!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------------ $STARTTIME"
@@ -66,7 +66,7 @@ while [ 1 ]; do
             > $CNTFILE
             > $INFOFILE
 
-            OBSCommand/OBSCommand.exe /stoprecording
+            #OBSCommand/OBSCommand.exe /stoprecording
 
             echo "quit" | nc localhost 6510
  

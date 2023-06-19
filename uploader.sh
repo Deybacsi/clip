@@ -1,9 +1,6 @@
 #!/bin/bash
 
-
-# client_secret.apps.googleusercontent.com.json
-
-# https://tanaikech.github.io/2022/11/11/curl-command-uploading-video-file-to-youtube-with-resumable-upload-using-youtube-api/
+# video uploader script test
 
 VIDEOFOLDER="../../Videók" # there are hardcoded shit also below
 SAVEDVIDEOSFILE="$VIDEOFOLDER/completevideos/videos.txt"
@@ -14,14 +11,16 @@ IFS=";"
 
 
 #while [ 1 ]; do
+    # get one intro from the saved videos list
     shuf -n 1 $SAVEDVIDEOSFILE | while read INTRO LINK; do
         CURTIME=$(date '+%Y.%m.%d %H:%M')
         # if video is not uploaded
         if [[ "$LINK" == "" ]]; then
+            # get the group name
             GROUP=$(grep $INTRO intros/C64/list-final.txt | cut -d";" -f 1)
             echo $CURTIME "---------------------------------------------------------------------"
             echo $INTRO - $GROUP - $LINK
-            VIDEOFILE="$VIDEOFOLDER/completevideos/$INTRO.mkv"
+            VIDEOFILE="$VIDEOFOLDER/completevideos/$INTRO.mkv" # videofile to upload
             ls -la $VIDEOFILE
 
             read -r -d '' DESCRIPTION <<-EOF
@@ -53,6 +52,7 @@ EOF
                        
 
 
+            # upload video to YT
 
             RESPONSE=$(python upload_video.py --file="$VIDEOFILE" \
                         --title="$INTRO - $GROUP | C64 cracker intros 24/7"\
@@ -60,15 +60,14 @@ EOF
                         --keywords="c64,commodore 64,commodore64,cracker intro,cracktro,demoscene,retro,c-64,c 64,demo,intro,8bit,8 bit,8-bit,commodore,comodore,chiptune,sid,sid chip,hvsc,80's,90's,1990,1980"\
                         --category="28"\
                         --privacyStatus="public")
+
+            # put response to log
             echo $RESPONSE | tee -a $LOGFILE
+
+        fi
+    done
+#done
 
 
 #Uploading file...
 #eF3P7i3DaEw was successfully uploaded.
-
-
-        fi
-
-    done
-
-#done

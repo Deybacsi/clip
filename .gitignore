@@ -1,3 +1,6 @@
+client_secrets.json
+upload_video.py-oauth2.json
+
 demos/*
 !demos/readme.md
 #intros/*
@@ -8,7 +11,9 @@ temp/*
 !temp/readme.md
 nohup.out
 log-playc64intros.txt
+log-uploader.txt
 
 intros/C64/counter.txt
 intros/C64/latest.txt
 intros/C64/nowplaying.txt
+intros/C64/savedvideos.txt

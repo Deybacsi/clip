@@ -12,16 +12,37 @@ echo $EMUEXE > emuexe.sh
 
 
 echo $EMUEXE
+if [[ "$1" == "test" ]]; then
+    CNT=20
+    SAVEDVIDEOS=25
+elif [[ "$1" == "live" ]]; then
+    CNT=120
+    SAVEDVIDEOS=500
+else 
+    exit
+fi
 
-CNT=120
+
+echo $CNT
+echo $SAVEDVIDEOS
+
+
+
 CNTFILE="intros/C64/counter.txt"
 LOGFILE="log-playc64intros.txt"
 INFOFILE="intros/C64/nowplaying.txt"
 LATESTFILE="intros/C64/latest.txt"
 YEARFILE="intros/C64/yearestimator.txt"
 
+VIDEOFOLDER="../../Videók" # there are hardcoded shit also below
+
+SAVEDVIDEOSFILE="$VIDEOFOLDER/completevideos/videos.txt"
+
+
 MYPATH=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo $MYPATH
+
+> $LOGFILE
 
  
 IFS=";"
@@ -47,12 +68,20 @@ while [ 1 ]; do
             #kill -9 $(cat emukiller_pid.txt)                                               # kill stucked emukillers to avoid <2min kills
             #nohup $MYPATH/emukiller.sh &
             #echo $! > emukiller_pid.txt
-            $EMUEXE -remotemonitor c64intros.prg &
-            #OBSCommand/OBSCommand.exe /startrecording
+
+            #echo "$(ls -l '../../Videók/completevideos/' | wc -l)"
+            #echo "$( grep -v $INTRO $SAVEDVIDEOSFILE | wc -l)" &&exit
+
+            $EMUEXE -remotemonitor c64intros2.prg &
+
+            if [[ "$(ls -l '../../Videók/completevideos/' | wc -l)" < "$SAVEDVIDEOS" ]]; then   # check no of saved videos
+                if [[ "$( grep $INTRO $SAVEDVIDEOSFILE | wc -l)" < "1" ]]; then                 # & check if video was saved in the past?
+                    OBSCommand/OBSCommand.exe /startrecording
+                fi
+            fi
 
             STARTTIME=$(date '+%Y-%m-%d?%H-%M')
             echo "!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------------ $STARTTIME"
-
 
             sleep 4
             echo "autostart \"$INTROFILE\"" | nc localhost 6510
@@ -66,19 +95,19 @@ while [ 1 ]; do
             > $CNTFILE
             > $INFOFILE
 
-            #OBSCommand/OBSCommand.exe /stoprecording
+            OBSCommand/OBSCommand.exe /stoprecording
 
             echo "quit" | nc localhost 6510
  
             echo "------------------------------------------------------------------------------------------------------"
-            VIDEONAME=$(ls -1t ../../Videók/$STARTTIME*.mkv | head -n1)
+            VIDEONAME=$(ls -1t $VIDEOFOLDER/$STARTTIME*.mkv | head -n1)
             echo "!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------------ $VIDEONAME"
 
-            echo "Videoname: $VIDEONAME"
-            echo "Introname: $INTRO"
+            echo "Videoname: $VIDEONAME" | tee -a $LOGFILE
+            echo "Introname: $INTRO" | tee -a $LOGFILE
             
-            mv "$VIDEONAME" "../../Videók/completevideos/$INTRO.mkv"
-            echo "mv" "../../Videók/$STARTTIME*.mkv" "../../Videók/completevideos/$INTRO.mkv"
+            mv "$VIDEONAME" "$VIDEOFOLDER/completevideos/$INTRO.mkv" && echo "$INTRO;" >> $SAVEDVIDEOSFILE && echo "---------- MOVED !!! SAVED !!!!--------" >> $LOGFILE
+            echo "mv" "$VIDEOFOLDER/$STARTTIME*.mkv" "$VIDEOFOLDER/completevideos/$INTRO.mkv"
 
             echo "------------------------------------------------------------------------------------------------------"
             sleep 2

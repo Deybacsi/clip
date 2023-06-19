@@ -24,4 +24,9 @@ https://obsproject.com/forum/resources/command-line-tool-for-obs-websocket-plugi
 .Net 3.1 download needed at first run. Command line error will be thrown with the DL link.
 https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=3.1.0&arch=x64&rid=win10-x64
 
+## Youtube-upload
+
+https://github.com/googleapis/google-api-python-client
+
+pip install google-api-python-client
 

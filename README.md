@@ -1,11 +1,14 @@
-# clip
-Command Line Intro Player
+# clip - Command Line Intro Player
 
-Currently this helps running the C64intros 24/7 live twitch channel at:
+Currently this is an "internal" project what helps running the C64intros 24/7 live twitch channel at:
 https://www.twitch.tv/c64intros
 
+At the moment it's not intended to release this to the big public, code is "as is", and comments are rare.
+
+If you find here something useful, feel free to (re)use it for your own purposes :)
+
  
-*on windows:*
+**on windows:**
 use mobaxterm to run the .sh files
 why win? -> better vsync, no screen tearing
 
@@ -13,7 +16,7 @@ prereq:
 apt-get install coreutils
 
 
-*on linux:*
+**on linux:**
 not tested
 
 ## OBScommand.exe

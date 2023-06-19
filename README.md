@@ -9,8 +9,9 @@ If you find here something useful, feel free to (re)use it for your own purposes
 
  
 **on windows:**
-use mobaxterm to run the .sh files
-why win? -> better vsync, no screen tearing
+why win? -> better vsync, no screen tearing :D
+
+use mobaxterm to run the .sh files... 
 
 prereq:
 apt-get install coreutils

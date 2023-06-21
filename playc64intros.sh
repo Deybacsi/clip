@@ -72,15 +72,22 @@ while [ 1 ]; do
             #echo "$(ls -l '../../Videók/completevideos/' | wc -l)"
             #echo "$( grep -v $INTRO $SAVEDVIDEOSFILE | wc -l)" &&exit
 
-            $EMUEXE -remotemonitor c64intros2.prg &
-
-            if [[ "$(ls -l '../../Videók/completevideos/' | wc -l)" < "$SAVEDVIDEOS" ]]; then   # check no of saved videos
+            #$EMUEXE -remotemonitor c64intros2.prg &
+            echo "No of already saved videos:"
+            ls -l '../../Videók/completevideos/' | wc -l
+            echo "Max videos : $SAVEDVIDEOS"
+            if (( "$(ls -l '../../Videók/completevideos/' | wc -l)" < "$SAVEDVIDEOS" )); then   # check no of saved videos
                 if [[ "$( grep $INTRO $SAVEDVIDEOSFILE | wc -l)" < "1" ]]; then                 # & check if video was saved in the past?
+                    echo "Start recording"
                     OBSCommand/OBSCommand.exe /startrecording
+
                 fi
             fi
 
+
+
             STARTTIME=$(date '+%Y-%m-%d?%H-%M')
+            echo
             echo "!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------------ $STARTTIME"
 
             sleep 4

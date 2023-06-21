@@ -1,5 +1,5 @@
-oneway-11 / Oneway
-acy-19 / Legacy
-hotshot-02 / Hotshot
-elite-07 / Elite
-triad-31 / Triad
+atc-12 / Touch of Class, A [ATC]
+x_t-11 / X-Ray+Transcom
+brutal-41 / Brutal
+tsm-19 / The Shaolin Monastery [TSM]
+death_cz-06 / Death (CZ)

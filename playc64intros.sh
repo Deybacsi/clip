@@ -81,6 +81,7 @@ while [ 1 ]; do
                 if [[ "$( grep $INTRO $SAVEDVIDEOSFILE | wc -l)" < "1" ]]; then                 # & check if video was saved in the past?
                     echo "Start recording"
                     OBSCommand/OBSCommand.exe /startrecording
+                    OBSCommand/OBSCommand /scene=/scene=Emulator
 
                 fi
             fi
@@ -99,8 +100,9 @@ while [ 1 ]; do
             done
             > $CNTFILE
             > $INFOFILE
-
-            OBSCommand/OBSCommand.exe /stoprecording
+            OBSCommand/OBSCommand.exe /scene=Wallpapers
+            sleep 1
+            OBSCommand/OBSCommand.exe /stoprecording 
 
             echo "quit" | nc localhost 6510
  
@@ -113,9 +115,9 @@ while [ 1 ]; do
             
             mv "$VIDEONAME" "$VIDEOFOLDER/completevideos/$INTRO.mkv" && echo "$INTRO;" >> $SAVEDVIDEOSFILE && echo "---------- MOVED !!! SAVED !!!!--------" >> $LOGFILE
             echo "mv" "$VIDEOFOLDER/$STARTTIME*.mkv" "$VIDEOFOLDER/completevideos/$INTRO.mkv"
-
+            echo "Video moved"
             echo "------------------------------------------------------------------------------------------------------"
-            sleep 2
+            sleep 1
         else
             echo -en "$INTRO.prg not found!\n"
             echo "$INTRO.prg not found" >> $LOGFILE        

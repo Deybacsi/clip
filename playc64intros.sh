@@ -72,7 +72,8 @@ while [ 1 ]; do
             #echo "$(ls -l '../../Videók/completevideos/' | wc -l)"
             #echo "$( grep -v $INTRO $SAVEDVIDEOSFILE | wc -l)" &&exit
 
-            #$EMUEXE -remotemonitor c64intros2.prg &
+            $EMUEXE -remotemonitor c64intros2.prg &
+
             echo "No of already saved videos:"
             ls -l '../../Videók/completevideos/' | wc -l
             echo "Max videos : $SAVEDVIDEOS"
@@ -84,13 +85,10 @@ while [ 1 ]; do
                 fi
             fi
 
-
-
             STARTTIME=$(date '+%Y-%m-%d?%H-%M')
-            echo
-            echo "!!!!!!!!!!!!!!!!!!!!!!!!!! ------------------------------------ $STARTTIME"
+            echo "Recording start time: $STARTTIME"
 
-            sleep 4
+            sleep 3
             echo "autostart \"$INTROFILE\"" | nc localhost 6510
 
             while [ $CNT -ne 0 ];do

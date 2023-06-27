@@ -100,6 +100,7 @@ while [ 1 ]; do
                 echo -en "\r         \r $CNT"
                 sleep 1
             done
+            echo
             > $CNTFILE
             > $INFOFILE
             OBSCommand/OBSCommand.exe /scene=Wallpapers

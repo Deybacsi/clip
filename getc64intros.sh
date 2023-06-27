@@ -22,8 +22,6 @@ rm $MYTMP/g2temp.txt
 for LETTER in 0 {A..Z}; do
     echo $LETTER
 
-    #GROUPS=$(curl -k https://index.hu)
-
     curl -s -k https://intros.c64.org/frame.php?letter=$LETTER | grep "module=showintros&group=" > $MYTMP/gtemp.txt
 
     cat $MYTMP/gtemp.txt | while read GROUP; do

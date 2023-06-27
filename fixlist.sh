@@ -20,7 +20,7 @@ do
     INTRO=$(echo $PRG | sed 's/.prg//g')
     echo -en $INTRO"-"
     LASTGROUP=$GROUPNAME
-    grep $INTRO $LISTPATH/list.txt | (
+    grep ";$INTRO" $LISTPATH/list.txt | (
         while read GROUPNAME INTRONAME; do
             #echo -en "\t $GROUPNAME $INTRONAME"
             echo -en "$GROUPNAME" > groupname.tmp

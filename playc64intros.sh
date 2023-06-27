@@ -82,16 +82,18 @@ while [ 1 ]; do
                     echo "Start recording"
                     OBSCommand/OBSCommand.exe /startrecording
                 fi
-            fi          
+            fi        
+            
+            echo "Starting VICE:"
+            $EMUEXE -silent -remotemonitor c64intros2.prg &          
+               
             OBSCommand/OBSCommand /scene=Emulator
 
-            echo "Starting VICE:"
-            $EMUEXE -silent -remotemonitor c64intros2.prg & 
-
+  
             STARTTIME=$(date '+%Y-%m-%d?%H-%M')
             echo "Recording start time: $STARTTIME"
 
-            sleep 3
+            sleep 4
             echo "autostart \"$INTROFILE\"" | nc localhost 6510
 
             while [ $CNT -ne 0 ];do

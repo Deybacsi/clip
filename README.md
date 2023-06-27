@@ -34,3 +34,5 @@ https://github.com/googleapis/google-api-python-client
 
 pip install google-api-python-client
 
+pip install apiclient httplib2 oauth2client
+

@@ -43,7 +43,8 @@ MYPATH=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo $MYPATH
 
 > $LOGFILE
-
+> $CNTFILE
+> $INFOFILE
  
 IFS=";"
 
@@ -83,6 +84,8 @@ while [ 1 ]; do
                     OBSCommand/OBSCommand.exe /startrecording
                 fi
             fi        
+            STARTTIME=$(date '+%Y-%m-%d?%H-%M')
+            echo "Recording start time: $STARTTIME"
             
             echo "Starting VICE:"
             $EMUEXE -silent -remotemonitor c64intros2.prg &          
@@ -90,8 +93,7 @@ while [ 1 ]; do
             OBSCommand/OBSCommand /scene=Emulator
 
   
-            STARTTIME=$(date '+%Y-%m-%d?%H-%M')
-            echo "Recording start time: $STARTTIME"
+
 
             sleep 4
             echo "autostart \"$INTROFILE\"" | nc localhost 6510

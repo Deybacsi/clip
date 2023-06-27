@@ -72,7 +72,7 @@ while [ 1 ]; do
             #echo "$(ls -l '../../Videók/completevideos/' | wc -l)"
             #echo "$( grep -v $INTRO $SAVEDVIDEOSFILE | wc -l)" &&exit
 
-            $EMUEXE -remotemonitor c64intros2.prg &
+
 
             echo "No of already saved videos:"
             ls -l '../../Videók/completevideos/' | wc -l
@@ -82,8 +82,12 @@ while [ 1 ]; do
                     echo "Start recording"
                     OBSCommand/OBSCommand.exe /startrecording
                 fi
-            fi
-            OBSCommand/OBSCommand /scene=/scene=Emulator
+            fi          
+            OBSCommand/OBSCommand /scene=Emulator
+
+            echo "Starting VICE:"
+            $EMUEXE -silent -remotemonitor c64intros2.prg & 
+
             STARTTIME=$(date '+%Y-%m-%d?%H-%M')
             echo "Recording start time: $STARTTIME"
 
@@ -93,13 +97,13 @@ while [ 1 ]; do
             while [ $CNT -ne 0 ];do
                 echo -en "Next in\n"$CNT > $CNTFILE
                 ((CNT-=1))
-                echo $CNT
+                echo -en "\r         \r $CNT"
                 sleep 1
             done
             > $CNTFILE
             > $INFOFILE
             OBSCommand/OBSCommand.exe /scene=Wallpapers
-            sleep 1
+            #sleep 1
             OBSCommand/OBSCommand.exe /stoprecording 
 
             echo "quit" | nc localhost 6510
@@ -115,7 +119,7 @@ while [ 1 ]; do
             echo "mv" "$VIDEOFOLDER/$STARTTIME*.mkv" "$VIDEOFOLDER/completevideos/$INTRO.mkv"
             echo "Video moved"
             echo "------------------------------------------------------------------------------------------------------"
-            sleep 1
+            #sleep 1
         else
             echo -en "$INTRO.prg not found!\n"
             echo "$INTRO.prg not found" >> $LOGFILE        

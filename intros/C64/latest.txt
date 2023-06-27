@@ -1,5 +1,5 @@
-agile_us-02 / Agile (US)
-hf-76 / Hokuto Force [HF]
-avt-27 / Avantgarde
 i_t-11 / Ikari+Talent
 ddt-39 / The Depredators [DDT]
+xray-46 / X-Ray
+sharks-07 / The Sharks
+lethargy-05 / Lethargy

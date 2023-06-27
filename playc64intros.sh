@@ -81,11 +81,9 @@ while [ 1 ]; do
                 if [[ "$( grep $INTRO $SAVEDVIDEOSFILE | wc -l)" < "1" ]]; then                 # & check if video was saved in the past?
                     echo "Start recording"
                     OBSCommand/OBSCommand.exe /startrecording
-                    OBSCommand/OBSCommand /scene=/scene=Emulator
-
                 fi
             fi
-
+            OBSCommand/OBSCommand /scene=/scene=Emulator
             STARTTIME=$(date '+%Y-%m-%d?%H-%M')
             echo "Recording start time: $STARTTIME"
 

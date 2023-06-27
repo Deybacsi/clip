@@ -36,23 +36,21 @@ do
         echo -en "\t\t$GROUPNAME;$INTRO"
         echo -en "$GROUPNAME;$INTRO;" >> $FINALLIST
 
-        YEAREST=$(grep -aohE "[0-9]{1,4}\.[0-9]{1,2}\.[0-9]{1,4}|[0-9]{1,4}\/[0-9]{1,2}\/[0-9]{1,4}|[0-9]{1,4}\-[0-9]{1,2}\-[0-9]{1,4}|\ [0-9]{4}\ " $PRGPATH/$PRG | head -n 1)
+        #YEAREST=$(grep -aohE "[0-9]{1,4}\.[0-9]{1,2}\.[0-9]{1,4}|[0-9]{1,4}\/[0-9]{1,2}\/[0-9]{1,4}|[0-9]{1,4}\-[0-9]{1,2}\-[0-9]{1,4}|\ [0-9]{4}\ " $PRGPATH/$PRG | head -n 1)
 
-        YEAREST=$(echo $YEAREST | sed 's/ //g')     # split spaces
-        if [ "${#YEAREST}" -eq 4 ]; then # string = "YYYY"
-            if [ $YEAREST -lt 1982 ] || [ $YEAREST -gt 2020 ]; then
-                YEAREST=""
-            fi
-        fi
+        #YEAREST=$(echo $YEAREST | sed 's/ //g')     # split spaces
+        #if [ "${#YEAREST}" -eq 4 ]; then # string = "YYYY"
+        #    if [ $YEAREST -lt 1982 ] || [ $YEAREST -gt 2020 ]; then
+        #        YEAREST=""
+        #    fi
+        #fi
 
-        if [ -n $YEAREST ]; then 
-            echo -en "\t$YEAREST"
-        fi
-        echo -en "$YEAREST;" >> $FINALLIST
+        #if [ -n $YEAREST ]; then 
+        #    echo -en "\t$YEAREST"
+        #fi
+        #echo -en "$YEAREST;" >> $FINALLIST
+        #echo -en "\n"
 
-
-
-        echo -en "\n"
         echo -en "\n" >> $FINALLIST
 
     )

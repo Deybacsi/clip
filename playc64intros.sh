@@ -88,7 +88,10 @@ while [ 1 ]; do
             echo "Recording start time: $STARTTIME"
             
             echo "Starting VICE:"
-            $EMUEXE -silent -remotemonitor c64intros2.prg &          
+            # $EMUEXE -silent -remotemonitor c64intros2.prg &
+            RNDINTRO=$(ls -1 intros/C64/c64intros/ | shuf -n 1)
+            $EMUEXE -remotemonitor intros/C64/c64intros/$RNDINTRO &     
+
                
             OBSCommand/OBSCommand /scene=Emulator
 

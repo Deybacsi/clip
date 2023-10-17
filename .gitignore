@@ -25,5 +25,6 @@ C64Music/*
 sidvibes/sidplayfp-output.txt
 sidvibes/sidinfo-*.txt
 
-projectMSDL
-projectMSDL/*
+
+sidvibes/projectMSDL
+sidvibes/projectMSDL/*

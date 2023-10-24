@@ -1,6 +1,5 @@
-cps-08 / Compagnions [CPS]
-tcom-31 / Transcom [TCOM]
-trd-06 / Tristar+Red Sector Inc+Dytec [TRD]
-dytec-07 / Dynamic Technology [DYTEC]
-atlantis-40 / Atlantis
-charged-05 / Charged
+fac-01 / Federation Against Copyright [FAC]
+xtra-03 / Xtra
+cmc-03 / Craftmen Company [CMC]
+accept-04 / Accept [ACP] (DE)
+unit5-04 / Unit 5 [U5]

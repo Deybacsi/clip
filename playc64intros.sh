@@ -13,15 +13,19 @@ echo $EMUEXE > emuexe.sh
 
 echo $EMUEXE
 if [[ "$1" == "test" ]]; then
-    CNT=20
+    CNT=10
     SAVEDVIDEOS=25
+    ADAFTERINTRO=5       # ad after this number of intros
 elif [[ "$1" == "live" ]]; then
     CNT=120
     SAVEDVIDEOS=500
+    ADAFTERINTRO=5       # ad after this number of intros
+
 else 
     exit
 fi
 
+ADCNT=$ADAFTERINTRO  
 
 echo $CNT
 echo $SAVEDVIDEOS
@@ -49,6 +53,14 @@ echo $MYPATH
 IFS=";"
 
 while [ 1 ]; do
+
+    # adcounter decreases after every intro
+    ADCNT=$((ADCNT-1))
+    echo "------------------------------------- ADCNT: $ADCNT"
+
+    if (( ADCNT <0 )); then
+        ADCNT=$ADAFTERINTRO 
+    fi
     shuf -n 1 intros/C64/list-final.txt | while read GROUP INTRO YEAR; do
 
         echo -en "\n\n\n\nSearching for $GROUP - $INTRO ..."
@@ -95,9 +107,6 @@ while [ 1 ]; do
                
             OBSCommand/OBSCommand /scene=Emulator
 
-  
-
-
             sleep 4
             echo "autostart \"$INTROFILE\"" | nc localhost 6510
 
@@ -110,6 +119,10 @@ while [ 1 ]; do
             echo
             > $CNTFILE
             > $INFOFILE
+
+
+            # ad code comes somewhere here
+
             OBSCommand/OBSCommand.exe /scene=Wallpapers
             #sleep 1
             OBSCommand/OBSCommand.exe /stoprecording 

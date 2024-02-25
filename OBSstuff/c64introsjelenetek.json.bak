@@ -318,6 +318,50 @@
         },
         {
             "prev_ver": 486604803,
+            "name": "Counter",
+            "uuid": "1fc3292b-1b13-4907-8685-08fd17260de6",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v2",
+            "settings": {
+                "outline": false,
+                "extents": true,
+                "text": "Now playing",
+                "font": {
+                    "face": "C64 Pro",
+                    "style": "Regular",
+                    "size": 24,
+                    "flags": 0
+                },
+                "align": "right",
+                "color": 4294940808,
+                "outline_size": 1,
+                "outline_color": 4278190080,
+                "extents_cx": 400,
+                "extents_cy": 32,
+                "antialiasing": true,
+                "read_from_file": true,
+                "file": "C:/Users/deypr/Documents/GitHub/clip/sidvibes/sidinfo-counter.txt",
+                "opacity": 54
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 486604803,
             "name": "Currently playing",
             "uuid": "d1483828-7c41-48c1-8ff0-4745396a0842",
             "id": "text_gdiplus",
@@ -1271,7 +1315,7 @@
             "versioned_id": "scene",
             "settings": {
                 "custom_size": false,
-                "id_counter": 16,
+                "id_counter": 18,
                 "items": [
                     {
                         "name": "Ablak record",
@@ -1337,6 +1381,44 @@
                         "crop_right": 0,
                         "crop_bottom": 0,
                         "id": 15,
+                        "group_item_backup": false,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Counter",
+                        "source_uuid": "1fc3292b-1b13-4907-8685-08fd17260de6",
+                        "visible": true,
+                        "locked": false,
+                        "rot": -6.8429069519042969,
+                        "pos": {
+                            "x": -26.0,
+                            "y": 802.0
+                        },
+                        "scale": {
+                            "x": 3.4000000953674316,
+                            "y": 3.40625
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 18,
                         "group_item_backup": false,
                         "scale_filter": "disable",
                         "blend_method": "default",
@@ -1508,8 +1590,8 @@
                         "locked": false,
                         "rot": -6.8429069519042969,
                         "pos": {
-                            "x": 1106.7186279296875,
-                            "y": 610.56634521484375
+                            "x": 1109.7186279296875,
+                            "y": 610.17303466796875
                         },
                         "scale": {
                             "x": 1.0,
@@ -1807,7 +1889,9 @@
                 "libobs.show_scene_item.Released:": [],
                 "libobs.hide_scene_item.Released:": [],
                 "libobs.show_scene_item.Kimeneti hangrögzítő": [],
-                "libobs.hide_scene_item.Kimeneti hangrögzítő": []
+                "libobs.hide_scene_item.Kimeneti hangrögzítő": [],
+                "libobs.show_scene_item.Counter": [],
+                "libobs.hide_scene_item.Counter": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,

@@ -17,6 +17,7 @@ intros/C64/counter.txt
 intros/C64/latest.txt
 intros/C64/nowplaying.txt
 intros/C64/savedvideos.txt
+intros/C64/yearestimator.txt
 
 
 C64Music
@@ -26,5 +27,5 @@ sidvibes/sidplayfp-output.txt
 sidvibes/sidinfo-*.txt
 
 
-sidvibes/projectMSDL
-sidvibes/projectMSDL/*
+sidvibes/projectMSDL-Windows-x64-2.0-pre2
+sidvibes/projectMSDL-Windows-x64-2.0-pre2/*

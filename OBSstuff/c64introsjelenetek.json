@@ -1,6 +1,6 @@
 {
     "DesktopAudioDevice1": {
-        "prev_ver": 486604803,
+        "prev_ver": 503316482,
         "name": "Asztal audio",
         "uuid": "0c06053e-003b-49b1-b1de-a5f4bdbbb280",
         "id": "wasapi_output_capture",
@@ -14,7 +14,7 @@
         "volume": 1.0,
         "balance": 0.5,
         "enabled": true,
-        "muted": true,
+        "muted": false,
         "push-to-mute": false,
         "push-to-mute-delay": 0,
         "push-to-talk": false,
@@ -31,7 +31,7 @@
         "private_settings": {}
     },
     "AuxAudioDevice1": {
-        "prev_ver": 486604803,
+        "prev_ver": 503316482,
         "name": "Mikrofon/Aux",
         "uuid": "74f0e05f-a32e-4a67-96d5-a3d4d62d3617",
         "id": "wasapi_input_capture",
@@ -59,7 +59,10 @@
         "deinterlace_mode": 0,
         "deinterlace_field_order": 0,
         "monitoring_type": 0,
-        "private_settings": {}
+        "private_settings": {
+            "volume_locked": true,
+            "mixer_hidden": true
+        }
     },
     "current_scene": "SIDvibes",
     "current_program_scene": "SIDvibes",
@@ -144,8 +147,7 @@
     "scaling_off_x": 0.0,
     "scaling_off_y": 0.0,
     "virtual-camera": {
-        "type": 0,
-        "internal": 0
+        "type2": 3
     },
     "modules": {
         "scripts-tool": [],
@@ -181,7 +183,7 @@
     },
     "sources": [
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Ablak felvétele",
             "uuid": "e7572737-7bbd-44c5-8e0d-368aca8002d7",
             "id": "window_capture",
@@ -210,16 +212,17 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Ablak record",
             "uuid": "8da0028d-9805-48a8-8fd4-568ec966d93e",
             "id": "game_capture",
             "versioned_id": "game_capture",
             "settings": {
-                "window": "projectM ➫ suksma - thee peerless shaede - n777.milk:SDL_app:projectMSDL.exe",
+                "window": "projectM:SDL_app:projectMSDL.exe",
                 "capture_mode": "window",
                 "capture_cursor": false,
-                "anti_cheat_hook": false
+                "anti_cheat_hook": false,
+                "hook_rate": 3
             },
             "mixers": 0,
             "sync": 0,
@@ -242,7 +245,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Author name",
             "uuid": "a21962d3-32c9-49db-a201-9a6ab90b43db",
             "id": "text_gdiplus",
@@ -280,7 +283,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Author:",
             "uuid": "447d8aaf-012f-487b-bda7-cf2bdc2023a7",
             "id": "text_gdiplus",
@@ -317,7 +320,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Counter",
             "uuid": "1fc3292b-1b13-4907-8685-08fd17260de6",
             "id": "text_gdiplus",
@@ -326,6 +329,8 @@
                 "outline": false,
                 "extents": true,
                 "text": "Now playing",
+                "read_from_file": true,
+                "file": "C:/Users/deypr/Documents/GitHub/clip/sidvibes/sidinfo-counter.txt",
                 "font": {
                     "face": "C64 Pro",
                     "style": "Regular",
@@ -334,14 +339,12 @@
                 },
                 "align": "right",
                 "color": 4294940808,
+                "opacity": 80,
                 "outline_size": 1,
                 "outline_color": 4278190080,
                 "extents_cx": 400,
                 "extents_cy": 32,
-                "antialiasing": true,
-                "read_from_file": true,
-                "file": "C:/Users/deypr/Documents/GitHub/clip/sidvibes/sidinfo-counter.txt",
-                "opacity": 54
+                "antialiasing": true
             },
             "mixers": 0,
             "sync": 0,
@@ -361,7 +364,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Currently playing",
             "uuid": "d1483828-7c41-48c1-8ff0-4745396a0842",
             "id": "text_gdiplus",
@@ -402,7 +405,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Cursor",
             "uuid": "e1b83bed-8d95-4313-9b7b-56a27c5fd2c9",
             "id": "text_gdiplus",
@@ -440,7 +443,7 @@
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 486604803,
+                    "prev_ver": 503316482,
                     "name": "Render késleltetés",
                     "uuid": "9b9fe220-ac81-46be-b39f-78378c1764f7",
                     "id": "gpu_delay",
@@ -468,7 +471,7 @@
             ]
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Emulator",
             "uuid": "bbb8e577-31c5-43b1-9347-4fa852c0438e",
             "id": "scene",
@@ -556,7 +559,7 @@
                     {
                         "name": "Next in",
                         "source_uuid": "2e741114-7d8d-4dbc-97e3-0d99c5e6c6c1",
-                        "visible": false,
+                        "visible": true,
                         "locked": true,
                         "rot": 0.0,
                         "pos": {
@@ -594,7 +597,7 @@
                     {
                         "name": "Now playing",
                         "source_uuid": "4a1d6d2d-4cd8-4896-a9da-169db1bfb75b",
-                        "visible": false,
+                        "visible": true,
                         "locked": true,
                         "rot": 0.0,
                         "pos": {
@@ -682,16 +685,16 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.Ablak felvétele": [],
-                "libobs.hide_scene_item.Ablak felvétele": [],
-                "libobs.show_scene_item.Játék felvétele": [],
-                "libobs.hide_scene_item.Játék felvétele": [],
-                "libobs.show_scene_item.Next in": [],
-                "libobs.hide_scene_item.Next in": [],
-                "libobs.show_scene_item.Now playing": [],
-                "libobs.hide_scene_item.Now playing": [],
-                "libobs.show_scene_item.Yearestimator": [],
-                "libobs.hide_scene_item.Yearestimator": []
+                "libobs.show_scene_item.16": [],
+                "libobs.hide_scene_item.16": [],
+                "libobs.show_scene_item.17": [],
+                "libobs.hide_scene_item.17": [],
+                "libobs.show_scene_item.7": [],
+                "libobs.hide_scene_item.7": [],
+                "libobs.show_scene_item.9": [],
+                "libobs.hide_scene_item.9": [],
+                "libobs.show_scene_item.13": [],
+                "libobs.hide_scene_item.13": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -699,7 +702,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "feketedoboz",
             "uuid": "a3cdff6f-bb2d-46e6-8070-46750ad1165c",
             "id": "text_gdiplus",
@@ -743,7 +746,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "feketedoboz 2",
             "uuid": "245b5ccb-527d-4f80-8727-5d12d5607d97",
             "id": "text_gdiplus",
@@ -787,7 +790,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Játék felvétele",
             "uuid": "a06534bd-dd9d-45a5-8fee-9846fc0b8f1c",
             "id": "game_capture",
@@ -821,7 +824,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Képvetítő 2",
             "uuid": "7c098f8c-fb87-47df-bb6b-c26d54419e8e",
             "id": "slideshow",
@@ -865,7 +868,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Kimeneti hangrögzítő",
             "uuid": "73a67035-b94c-4fa2-8f94-ab31954217cc",
             "id": "wasapi_output_capture",
@@ -894,7 +897,7 @@
             "private_settings": {},
             "filters": [
                 {
-                    "prev_ver": 486604803,
+                    "prev_ver": 503316482,
                     "name": "Korlátozó",
                     "uuid": "569bd79b-4f11-43d7-ab2b-cb6bdd0379f3",
                     "id": "limiter_filter",
@@ -922,7 +925,7 @@
             ]
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Latest intro",
             "uuid": "9f648192-88e2-483e-991a-0ea7cf8b1522",
             "id": "text_gdiplus",
@@ -961,7 +964,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Latest intros",
             "uuid": "7fa4465b-2532-4819-b5ee-63018f894e78",
             "id": "text_gdiplus",
@@ -997,7 +1000,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Latest list",
             "uuid": "63864fee-b017-4d65-85e3-a9406411572a",
             "id": "text_gdiplus",
@@ -1037,7 +1040,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Loading",
             "uuid": "5e12dd1a-40c5-45cb-a8d1-0b58ecc6a27d",
             "id": "text_gdiplus",
@@ -1074,7 +1077,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Mode",
             "uuid": "40d9d6d4-4298-471c-923a-046a5f1ab1c7",
             "id": "text_gdiplus",
@@ -1116,7 +1119,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Next in",
             "uuid": "2e741114-7d8d-4dbc-97e3-0d99c5e6c6c1",
             "id": "text_gdiplus",
@@ -1154,7 +1157,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Now playing",
             "uuid": "4a1d6d2d-4cd8-4896-a9da-169db1bfb75b",
             "id": "text_gdiplus",
@@ -1191,7 +1194,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Released at",
             "uuid": "92a7d26b-fcd7-464b-9fdc-36b76271ce9b",
             "id": "text_gdiplus",
@@ -1229,7 +1232,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Released:",
             "uuid": "75a97538-5152-4bbc-a11b-1f94aaea9db6",
             "id": "text_gdiplus",
@@ -1266,7 +1269,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "SID type",
             "uuid": "53e4e6d1-4a95-4db2-97e5-92453af4cacf",
             "id": "text_gdiplus",
@@ -1308,7 +1311,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "SIDvibes",
             "uuid": "b0a3fa4d-f41c-44c6-aa26-800ea8e8eb43",
             "id": "scene",
@@ -1328,8 +1331,8 @@
                             "y": 0.0
                         },
                         "scale": {
-                            "x": 4.0058650970458984,
-                            "y": 4.0052084922790527
+                            "x": 4.2687501907348633,
+                            "y": 4.2666668891906738
                         },
                         "align": 5,
                         "bounds_type": 0,
@@ -1396,12 +1399,12 @@
                     {
                         "name": "Counter",
                         "source_uuid": "1fc3292b-1b13-4907-8685-08fd17260de6",
-                        "visible": true,
+                        "visible": false,
                         "locked": false,
                         "rot": -6.8429069519042969,
                         "pos": {
-                            "x": -26.0,
-                            "y": 802.0
+                            "x": 67.0,
+                            "y": 790.0
                         },
                         "scale": {
                             "x": 3.4000000953674316,
@@ -1629,7 +1632,7 @@
                         "rot": -6.8243765830993652,
                         "pos": {
                             "x": 3.73675537109375,
-                            "y": 690.9365234375
+                            "y": 691.9365234375
                         },
                         "scale": {
                             "x": 1.0,
@@ -1864,34 +1867,34 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.Ablak record": [],
-                "libobs.hide_scene_item.Ablak record": [],
-                "libobs.show_scene_item.feketedoboz 2": [],
-                "libobs.hide_scene_item.feketedoboz 2": [],
-                "libobs.show_scene_item.feketedoboz": [],
-                "libobs.hide_scene_item.feketedoboz": [],
-                "libobs.show_scene_item.Speed type": [],
-                "libobs.hide_scene_item.Speed type": [],
-                "libobs.show_scene_item.Mode": [],
-                "libobs.hide_scene_item.Mode": [],
-                "libobs.show_scene_item.SID type": [],
-                "libobs.hide_scene_item.SID type": [],
-                "libobs.show_scene_item.Currently playing": [],
-                "libobs.hide_scene_item.Currently playing": [],
-                "libobs.show_scene_item.Song title": [],
-                "libobs.hide_scene_item.Song title": [],
-                "libobs.show_scene_item.Author name": [],
-                "libobs.hide_scene_item.Author name": [],
-                "libobs.show_scene_item.Author:": [],
-                "libobs.hide_scene_item.Author:": [],
-                "libobs.show_scene_item.Released at": [],
-                "libobs.hide_scene_item.Released at": [],
-                "libobs.show_scene_item.Released:": [],
-                "libobs.hide_scene_item.Released:": [],
-                "libobs.show_scene_item.Kimeneti hangrögzítő": [],
-                "libobs.hide_scene_item.Kimeneti hangrögzítő": [],
-                "libobs.show_scene_item.Counter": [],
-                "libobs.hide_scene_item.Counter": []
+                "libobs.show_scene_item.2": [],
+                "libobs.hide_scene_item.2": [],
+                "libobs.show_scene_item.15": [],
+                "libobs.hide_scene_item.15": [],
+                "libobs.show_scene_item.18": [],
+                "libobs.hide_scene_item.18": [],
+                "libobs.show_scene_item.14": [],
+                "libobs.hide_scene_item.14": [],
+                "libobs.show_scene_item.11": [],
+                "libobs.hide_scene_item.11": [],
+                "libobs.show_scene_item.12": [],
+                "libobs.hide_scene_item.12": [],
+                "libobs.show_scene_item.13": [],
+                "libobs.hide_scene_item.13": [],
+                "libobs.show_scene_item.4": [],
+                "libobs.hide_scene_item.4": [],
+                "libobs.show_scene_item.6": [],
+                "libobs.hide_scene_item.6": [],
+                "libobs.show_scene_item.7": [],
+                "libobs.hide_scene_item.7": [],
+                "libobs.show_scene_item.5": [],
+                "libobs.hide_scene_item.5": [],
+                "libobs.show_scene_item.8": [],
+                "libobs.hide_scene_item.8": [],
+                "libobs.show_scene_item.9": [],
+                "libobs.hide_scene_item.9": [],
+                "libobs.show_scene_item.16": [],
+                "libobs.hide_scene_item.16": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -1899,7 +1902,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Song title",
             "uuid": "b3cfe207-b1fe-47a5-a42d-e4f67fd239c8",
             "id": "text_gdiplus",
@@ -1941,7 +1944,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Speed type",
             "uuid": "0cae4004-7972-49d2-86e7-0d9517760b25",
             "id": "text_gdiplus",
@@ -1983,7 +1986,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Wallpapers",
             "uuid": "afbcd21f-b480-4223-8990-49370c15687a",
             "id": "scene",
@@ -2235,18 +2238,18 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.Képvetítő 2": [],
-                "libobs.hide_scene_item.Képvetítő 2": [],
-                "libobs.show_scene_item.Loading": [],
-                "libobs.hide_scene_item.Loading": [],
-                "libobs.show_scene_item.Latest intros": [],
-                "libobs.hide_scene_item.Latest intros": [],
-                "libobs.show_scene_item.Cursor": [],
-                "libobs.hide_scene_item.Cursor": [],
-                "libobs.show_scene_item.Latest list": [],
-                "libobs.hide_scene_item.Latest list": [],
-                "libobs.show_scene_item.Latest intro": [],
-                "libobs.hide_scene_item.Latest intro": []
+                "libobs.show_scene_item.1": [],
+                "libobs.hide_scene_item.1": [],
+                "libobs.show_scene_item.3": [],
+                "libobs.hide_scene_item.3": [],
+                "libobs.show_scene_item.4": [],
+                "libobs.hide_scene_item.4": [],
+                "libobs.show_scene_item.7": [],
+                "libobs.hide_scene_item.7": [],
+                "libobs.show_scene_item.8": [],
+                "libobs.hide_scene_item.8": [],
+                "libobs.show_scene_item.6": [],
+                "libobs.hide_scene_item.6": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -2254,7 +2257,7 @@
             "private_settings": {}
         },
         {
-            "prev_ver": 486604803,
+            "prev_ver": 503316482,
             "name": "Yearestimator",
             "uuid": "1db8d8ae-012b-4779-b8bc-af679b9eb351",
             "id": "text_gdiplus",

@@ -9,7 +9,10 @@ export HVSC_BASE
 FPOUT="sidplayfp-output.txt"
 CNTFILE="sidinfo-counter.txt"
 
-
+STREAM_STARTED_EPOCH_FILE="streamstarted.txt"
+STREAM_STARTED_EPOCH=0
+STREAM_RESTART_AFTER=3600
+echo 0 > $STREAM_STARTED_EPOCH_FILE
 
 # windows store eyetune
 #killall -q EyeTune.WindowsUniversal.Application.exe
@@ -20,6 +23,22 @@ CNTFILE="sidinfo-counter.txt"
 
 while [ 1 ]; do
     shuf -n 1 $LISTFILE | while read SID LENGTHSEC; do
+        echo
+
+        EPOCH_NOW=$(date +%s)
+        STREAM_STARTED_EPOCH=$(cat $STREAM_STARTED_EPOCH_FILE)
+        echo "Stream running time: " $(( $EPOCH_NOW - $STREAM_STARTED_EPOCH )) "secs"
+        if (( $EPOCH_NOW - $STREAM_STARTED_EPOCH > $STREAM_RESTART_AFTER ));then
+            echo $EPOCH_NOW > $STREAM_STARTED_EPOCH_FILE
+            echo "---- Restarting stream ----"
+            echo "Stop stream:"
+            ../OBSCommand/OBSCommand.exe /stopstream
+            sleep 5
+            echo "Start stream:"
+            ../OBSCommand/OBSCommand.exe /startstream
+        fi
+        export STREAM_STARTED_EPOCH
+        echo $STREAM_STARTED_EPOCH
 
         SIDFILE=$HVSC_BASE$SID
         echo $SIDFILE
@@ -34,10 +53,6 @@ while [ 1 ]; do
             killall -q projectMSDL
             nohup projectMSDL-Windows-x64-2.0-pre2/projectMSDL.exe >/dev/null &
         fi
-
-    
-
-        #SIDFILE="../C64Music/MUSICIANS/B/Barracuda/Lumesha.sid"
 
         nohup sidplayfp/sidplayfp.exe $SIDFILE --none -v > $FPOUT 2>&1 && killall -q sidplayfp
 
